@@ -104,6 +104,7 @@ public class EasyRecyclerView {
     }
 
     public Thread initialize(int listSize, int loopDuration, boolean snapToCenter) {
+        setupDisplay(this.type);
         Thread thread;
         if (snapToCenter) {
             SnapHelper helper = new LinearSnapHelper();
