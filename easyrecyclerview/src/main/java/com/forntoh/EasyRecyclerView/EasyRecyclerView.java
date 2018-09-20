@@ -46,11 +46,12 @@ public class EasyRecyclerView {
         return this;
     }
 
-    public void setItemSpacing(int itemSpacing, InsetDecoration.Sides sides) {
+    public EasyRecyclerView setItemSpacing(int itemSpacing, InsetDecoration.Sides sides) {
         if (itemSpacing < 0)
             throw new IndexOutOfBoundsException("Only positive values allowed");
         this.decoration = new InsetDecoration(rv.getContext(), itemSpacing);
         this.decoration.applyTo(sides);
+        return this;
     }
 
     public void initialize() {
