@@ -19,5 +19,12 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TextView"
+            android:textColor="@android:color/white" />
     </FrameLayout>
 </com.forntoh.easyrecyclerviewexample.SquareConstraintLayout>

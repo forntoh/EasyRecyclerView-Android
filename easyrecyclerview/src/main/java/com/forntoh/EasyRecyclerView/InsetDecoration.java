@@ -38,9 +38,6 @@ public class InsetDecoration extends RecyclerView.ItemDecoration {
             right = spacing / 2;
             top = position / cols == 0 ? spacing : spacing / 2;
             bottom = spacing / 2;
-
-            if (position % cols == 0) view.post(() -> view.setPadding(spacing / 2, 0, 0, 0));
-            if (position % cols == cols - 1) view.post(() -> view.setPadding(0, 0, spacing / 2, 0));
         } else if (layoutManager instanceof LinearLayoutManager) {
             if (((LinearLayoutManager) layoutManager).getOrientation() == LinearLayoutManager.HORIZONTAL) {
                 left = position == 0 ? spacing : spacing / 2;
