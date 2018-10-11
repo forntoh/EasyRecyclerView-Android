@@ -34,10 +34,13 @@ public class InsetDecoration extends RecyclerView.ItemDecoration {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager instanceof GridLayoutManager) {
             int cols = ((GridLayoutManager) layoutManager).getSpanCount();
-            left = position % cols != 1 ? spacing : spacing / 2;
-            right = position % cols != 0 ? spacing : spacing / 2;
+            left = spacing / 2;
+            right = spacing / 2;
             top = position / cols == 0 ? spacing : spacing / 2;
             bottom = spacing / 2;
+
+            if (position % cols == 0) view.post(() -> view.setPadding(spacing / 2, 0, 0, 0));
+            if (position % cols == cols - 1) view.post(() -> view.setPadding(0, 0, spacing / 2, 0));
         } else if (layoutManager instanceof LinearLayoutManager) {
             if (((LinearLayoutManager) layoutManager).getOrientation() == LinearLayoutManager.HORIZONTAL) {
                 left = position == 0 ? spacing : spacing / 2;
